@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { API_BASE_URL, API_KEY } from '../api';
+import Search from './Search';
 
 const States = () => {
   const [states, setStates] = useState([]);
+  const [filteredStates, setFilteredStates] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -19,6 +21,7 @@ const States = () => {
       }
       const data = await response.json();
       setStates(data.data);
+      setFilteredStates(data.data);
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -29,6 +32,13 @@ const States = () => {
   useEffect(() => {
     fetchStates();
   }, []);
+
+  const handleSearch = (query) => {
+    const filtered = states.filter(
+      (state) => state.state.toLowerCase().includes(query.toLowerCase()),
+    );
+    setFilteredStates(filtered);
+  };
 
   const renderStates = () => {
     if (loading) {
@@ -46,7 +56,7 @@ const States = () => {
     }
     return (
       <ul className="items">
-        {states.map((state) => (
+        {filteredStates.map((state) => (
           <li key={state.state}>
             <Link to={`/${state.state}`} className="item-link">
               {state.state}
@@ -59,7 +69,10 @@ const States = () => {
 
   return (
     <div>
-      <h2>Canadian States</h2>
+      <nav>
+        <h2>Canadian States</h2>
+        <Search onSearch={handleSearch} />
+      </nav>
       {renderStates()}
     </div>
   );

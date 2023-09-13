@@ -1,9 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Snapshot Tests renders Header correctly 1`] = `
-<header>
+<header
+  className="header"
+>
   <h1>
-    Pollution Metrics for Canada
+    Weather and Pollution Metrics for Canada
   </h1>
 </header>
 `;

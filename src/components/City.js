@@ -38,52 +38,50 @@ const City = () => {
 
   const renderContent = () => {
     if (loading) {
-      return <p>Loading...</p>;
+      return <p className="loading">Loading...</p>;
     }
     if (error) {
       return (
-        <>
+        <div className="error">
           <p>Error fetching data. Please try again.</p>
           <button type="button" onClick={retryFetch}>Retry</button>
-        </>
+        </div>
       );
     }
     const { current } = city;
     return (
-      <div>
-        <Link to={`/${selectedState}`}>Back</Link>
-        <h2>{`${selectedCity} air pollution details`}</h2>
+      <div className="container">
+        <nav className="navbar flex">
+          <Link to={`/${selectedState}`} className="back">Back</Link>
+          <h2>{`${selectedCity} weather and air pollution details`}</h2>
+        </nav>
         <article className="details">
-          <div>
-            <h3>Weather Details</h3>
-            <p>
-              Temperature:
-              {current.weather.tp}
-              °C
-            </p>
-            <p>
-              Pressure:
-              {current.weather.pr}
-              {' '}
-              hPa
-            </p>
-            <p>
-              Humidity:
-              {current.weather.hu}
-              %
-            </p>
-          </div>
-          <div>
-            <h3>Pollution Details</h3>
-            <p>
-              Air Quality Index (AQI):
-              {current.pollution.aqius}
-            </p>
-            <p>
-              Main Pollutant:
-              {current.pollution.mainus}
-            </p>
-          </div>
+          <h3>Pollution Details</h3>
+          <p>
+            Air Quality Index (AQI):
+            {current.pollution.aqius}
+          </p>
+          <p>
+            Main Pollutant:
+            {current.pollution.mainus}
+          </p>
+          <h3>Weather Details</h3>
+          <p>
+            Temperature:
+            {current.weather.tp}
+            °C
+          </p>
+          <p>
+            Pressure:
+            {current.weather.pr}
+            {' '}
+            hPa
+          </p>
+          <p>
+            Humidity:
+            {current.weather.hu}
+            %
+          </p>
         </article>
       </div>
     );

@@ -42,11 +42,11 @@ const States = () => {
 
   const renderStates = () => {
     if (loading) {
-      return <p>Loading...</p>;
+      return <p className="loading">Loading...</p>;
     }
     if (error) {
       return (
-        <div>
+        <div className="error">
           <p>Error fetching data. Please try again.</p>
           <button type="button" onClick={fetchStates}>
             Retry
@@ -57,7 +57,7 @@ const States = () => {
     return (
       <ul className="items">
         {filteredStates.map((state) => (
-          <li key={state.state}>
+          <li key={state.state} className="flex">
             <Link to={`/${state.state}`} className="item-link">
               {state.state}
             </Link>
@@ -69,7 +69,7 @@ const States = () => {
 
   return (
     <div>
-      <nav>
+      <nav className="navbar flex">
         <h2>Canadian States</h2>
         <Search onSearch={handleSearch} />
       </nav>

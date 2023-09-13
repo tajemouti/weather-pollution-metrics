@@ -1,6 +1,6 @@
 const Header = () => (
-  <header>
-    <h1>Pollution Metrics for Canada</h1>
+  <header className="header flex">
+    <h1>Weather and Pollution Metrics for Canada</h1>
   </header>
 );
 

@@ -48,22 +48,22 @@ const Cities = () => {
 
   const renderContent = () => {
     if (loading) {
-      return <p>Loading...</p>;
+      return <p className="loading">Loading...</p>;
     }
     if (error) {
       return (
-        <>
+        <div className="error">
           <p>Error fetching data. Please try again.</p>
           <button type="button" onClick={retryFetch}>
             Retry
           </button>
-        </>
+        </div>
       );
     }
     return (
       <ul className="items">
         {filteredCities.map((city) => (
-          <li key={city.city}>
+          <li key={city.city} className="flex">
             <Link to={`/${selectedState}/${city.city}`} className="item-link">
               {city.city}
             </Link>
@@ -75,8 +75,8 @@ const Cities = () => {
 
   return (
     <>
-      <nav>
-        <Link to="/">Back</Link>
+      <nav className="navbar flex">
+        <Link to="/" className="back">Back</Link>
         <h2>{`${selectedState} cities`}</h2>
         <Search onSearch={handleSearch} />
       </nav>

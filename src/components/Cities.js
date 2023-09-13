@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { API_BASE_URL, API_KEY } from '../api';
 import { setCities } from '../redux/cities/citiesSlice';
+import Search from './Search';
 
 const Cities = () => {
   const dispatch = useDispatch();
@@ -10,6 +11,7 @@ const Cities = () => {
   const { state: selectedState } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [filteredCities, setFilteredCities] = useState([]);
 
   const fetchData = useCallback(async () => {
     try {
@@ -21,6 +23,7 @@ const Cities = () => {
       }
       const data = await response.json();
       dispatch(setCities(data.data));
+      setFilteredCities(data.data);
       setLoading(false);
     } catch (error) {
       setError(error);
@@ -36,6 +39,11 @@ const Cities = () => {
     setError(null);
     setLoading(true);
     fetchData();
+  };
+
+  const handleSearch = (query) => {
+    const filtered = cities.filter((city) => city.city.toLowerCase().includes(query.toLowerCase()));
+    setFilteredCities(filtered);
   };
 
   const renderContent = () => {
@@ -54,7 +62,7 @@ const Cities = () => {
     }
     return (
       <ul className="items">
-        {cities.map((city) => (
+        {filteredCities.map((city) => (
           <li key={city.city}>
             <Link to={`/${selectedState}/${city.city}`} className="item-link">
               {city.city}
@@ -67,7 +75,11 @@ const Cities = () => {
 
   return (
     <>
-      <Link to="/">Back</Link>
+      <nav>
+        <Link to="/">Back</Link>
+        <h2>{`${selectedState} cities`}</h2>
+        <Search onSearch={handleSearch} />
+      </nav>
       {renderContent()}
     </>
   );

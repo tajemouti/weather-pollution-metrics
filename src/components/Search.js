@@ -17,6 +17,7 @@ const Search = ({ onSearch }) => {
         placeholder="Search..."
         value={query}
         onChange={handleInputChange}
+        data-testid="search-text"
       />
     </div>
   );

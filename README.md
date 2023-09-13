@@ -6,6 +6,8 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+    - [Presentation](#presentation)
 - [💻 Getting Started](#getting-started)
   - [Setup](#setup)
   - [Prerequisites](#prerequisites)
@@ -42,6 +44,16 @@ Visual Studia Code, React.js and Redux.js.
 - **[Linters implementation]**
 - **[Metrics application]**
 - **[API integration]**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- Live Demo [Link](https://kaleidoscopic-paletas-4f0fa5.netlify.app/)
+
+### 🚀 Presentation <a name="presentation"></a>
+
+- Presentation [video](https://www.loom.com/share/1fc7db53062e42a68cdeff8a7530a9bd?sid=cc5ceefe-fa57-4df0-a03a-4e60b24b3425)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

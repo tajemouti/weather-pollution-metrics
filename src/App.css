@@ -50,6 +50,15 @@ input {
   font-weight: 700;
 }
 
+.details li {
+  height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1% 5%;
+  background: #d42b74c0;
+}
+
 .items li:nth-child(odd) {
   background: #cd3b7ab7;
 }
@@ -76,15 +85,6 @@ input {
   justify-content: center;
 }
 
-.details li {
-  height: 3em;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1% 5%;
-  background: #d42b74c0;
-}
-
 .details li:nth-child(even) {
   background: #cd3b7ab7;
 }
@@ -107,7 +107,7 @@ input {
 .error button {
   font-size: 0.8em;
   padding: 1% 5%;
-  background: rgb(179, 3, 170);
+  background: #d42b74c0;
   margin-top: 5%;
   border: none;
   box-shadow: 1px 1px 2px 2px;

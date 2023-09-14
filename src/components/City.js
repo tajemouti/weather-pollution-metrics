@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { FaAngleLeft } from 'react-icons/fa6';
 import { API_BASE_URL, API_KEY } from '../api';
 import { setCity } from '../redux/city/citySlice';
 
@@ -52,7 +53,9 @@ const City = () => {
     return (
       <div className="container">
         <nav className="navbar flex">
-          <Link to={`/${selectedState}`} className="back">Back</Link>
+          <Link to={`/${selectedState}`} className="back">
+            <FaAngleLeft className="arrow-left" />
+          </Link>
           <h2>{`${selectedCity} weather and air pollution details`}</h2>
         </nav>
         <article className="details">

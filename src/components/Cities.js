@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { FaAngleLeft, FaArrowRight } from 'react-icons/fa6';
 import { API_BASE_URL, API_KEY } from '../api';
 import { setCities } from '../redux/cities/citiesSlice';
 import Search from './Search';
@@ -65,7 +66,8 @@ const Cities = () => {
         {filteredCities.map((city) => (
           <li key={city.city} className="flex">
             <Link to={`/${selectedState}/${city.city}`} className="item-link">
-              {city.city}
+              <span>{city.city}</span>
+              <FaArrowRight className="arrow-right" />
             </Link>
           </li>
         ))}
@@ -76,7 +78,9 @@ const Cities = () => {
   return (
     <>
       <nav className="navbar flex">
-        <Link to="/" className="back">Back</Link>
+        <Link to="/" className="back">
+          <FaAngleLeft className="arrow-left" />
+        </Link>
         <h2>{`${selectedState} cities`}</h2>
         <Search onSearch={handleSearch} />
       </nav>

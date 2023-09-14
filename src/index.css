@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Gill+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style-type: none;
+  color: #fcd8d8;
+  font-family: 'Gill Sans', sans-serif;
+}
+
+body {
+  background: #a31050c0;
+  width: 100vw;
+  min-width: 375px;
+  min-height: 100vh;
+}

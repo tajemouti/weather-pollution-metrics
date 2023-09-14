@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Snapshot Tests renders Header correctly 1`] = `
+<header
+  className="header flex"
+>
+  <h1>
+    Weather and Pollution Metrics for Canada
+  </h1>
+</header>
+`;
+
+exports[`Snapshot Tests renders Search correctly 1`] = `
+<div
+  className="search-container"
+>
+  <input
+    data-testid="search-text"
+    onChange={[Function]}
+    placeholder="Search..."
+    type="text"
+    value=""
+  />
+</div>
+`;

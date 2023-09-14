@@ -65,7 +65,7 @@ const Cities = () => {
       <ul className="items">
         {filteredCities.map((city) => (
           <li key={city.city} className="flex">
-            <Link to={`/${selectedState}/${city.city}`} className="item-link">
+            <Link to={`/${selectedState}/${city.city}`} className="item-link flex">
               <span>{city.city}</span>
               <FaArrowRight className="arrow-right" />
             </Link>

@@ -59,7 +59,7 @@ const States = () => {
       <ul className="items">
         {filteredStates.map((state) => (
           <li key={state.state} className="flex">
-            <Link to={`/${state.state}`} className="item-link">
+            <Link to={`/${state.state}`} className="item-link flex">
               <span>{state.state}</span>
               <FaArrowRight className="arrow-right" />
             </Link>

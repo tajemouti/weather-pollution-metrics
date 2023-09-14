@@ -51,41 +51,46 @@ const City = () => {
     }
     const { current } = city;
     return (
-      <div className="container">
+      <div>
         <nav className="navbar flex">
           <Link to={`/${selectedState}`} className="back">
             <FaAngleLeft className="arrow-left" />
           </Link>
-          <h2>{`${selectedCity} weather and air pollution details`}</h2>
+          <h2>{`${selectedCity} city`}</h2>
         </nav>
-        <article className="details">
-          <h3>Pollution Details</h3>
-          <p>
-            Air Quality Index (AQI):
-            {current.pollution.aqius}
-          </p>
-          <p>
-            Main Pollutant:
-            {current.pollution.mainus}
-          </p>
-          <h3>Weather Details</h3>
-          <p>
-            Temperature:
+        <p className="details-title">Weathe and air pollution details</p>
+        <ul className="details">
+          <li className="title">
+            Weather Details
+          </li>
+          <li>
+            <span>Temperature</span>
             {current.weather.tp}
             °C
-          </p>
-          <p>
-            Pressure:
+          </li>
+          <li>
+            <span>Pressure</span>
             {current.weather.pr}
             {' '}
             hPa
-          </p>
-          <p>
-            Humidity:
+          </li>
+          <li>
+            <span>Humidity</span>
             {current.weather.hu}
             %
-          </p>
-        </article>
+          </li>
+          <li className="title">
+            Pollution Details
+          </li>
+          <li>
+            <span>Air Quality Index (AQI)</span>
+            {current.pollution.aqius}
+          </li>
+          <li>
+            <span>Main Pollutant</span>
+            {current.pollution.mainus}
+          </li>
+        </ul>
       </div>
     );
   };

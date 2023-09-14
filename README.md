@@ -49,7 +49,7 @@ Visual Studia Code, React.js and Redux.js.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- Live Demo [Link](https://kaleidoscopic-paletas-4f0fa5.netlify.app/)
+- Live Demo [Link](https://6503034982ce546350b7255d--kaleidoscopic-paletas-4f0fa5.netlify.app/)
 
 ### 🚀 Presentation <a name="presentation"></a>
 
